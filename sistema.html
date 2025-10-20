@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 100%;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema</title>
+  <link rel="stylesheet" href="sistema.css">
+
+
+</head>
+
+<body>
+  <header>
+    <h1>Sistema Cozinha</h1>
+    <div>
+      <button id="cadastrar">Sair</button>
+    </div>
+  </header>
+
+
+  <main>
+
+
+    <div>
+      <section>
+        <h2>Lista de Cardapio</h2>
+        <table style="width:100%">
+          <tr>
+            <th>Turno</th>
+            <th>Data</th>
+            <th>Refeição</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+          </tr>
+          <tr>
+            <td>Manhã</td>
+            <td>22/09/2025</td>
+            <td>Almoço</td>
+            <td>✏️</td>
+            <td>🗑️</td>
+          </tr>
+          <tr>
+            <td>Tarde</td>
+            <td>22/09/2025</td>
+            <td>Almoço</td>
+            <td>✏️</td>
+            <td>🗑️</td>
+          </tr>
+          <tr>
+            <td>Noite</td>
+            <td>22/09/2025</td>
+            <td>Janta</td>
+            <td>✏️</td>
+            <td>🗑️</td>
+          </tr>
+          <tr>
+            <td>Integral</td>
+            <td>22/09/2025</td>
+            <td>Lanche</td>
+            <td>✏️</td>
+            <td>🗑️</td>
+          </tr>
+        </table>
+
+      </section>
+
+      <section class="fale">
+        <h2>FALE CONOSCO</h2>
+        <div class="fale-conosco">
+          <div>
+            <select name="turnos" id="turnos">
+              <option value="" selected disabled>Escolha o assunto</option>
+              <option value="elogio">Elogio</option>
+              <option value="opiniao">Opinião</option>
+              <option value="critica">Crítica</option>
+              <option value="sugestao">Sugestão</option>
+            </select><br>
+
+            <textarea name="" id=""></textarea><br>
+          </div>
+
+          <button id="enviar">Enviar</button>
+        </div>
+
+
+      </section>
+    </div>
+    <aside>
+
+      <h2>CADASTRAR REFEIÇÕES</h2>
+      <h3>Cadastrar Prato</h3>
+      <form>
+
+
+        <fieldset>
+          <legend>Data</legend>
+          <input type="date" id="date" name="data" class="ocultar"><br>
+          <br>
+        </fieldset>
+
+        <fieldset>
+          <legend>Turno</legend>
+          <select name="turnos" id="turnos">
+            <option value="" selected disabled class="ocultar">Turno</option>
+            <option value="manha">Manhã</option>
+            <option value="tarde">Tarde</option>
+            <option value="noite">Noite</option>
+            <option value="integral">Integral</option>
+          </select><br>
+        </fieldset>
+
+        <h5>REFEIÇÃO</h5>
+
+        <fieldset>
+          <legend>Titulo</legend>
+          <input type="text" id="refeição" name="refeição" class="ocultar"><br>
+          <br>
+        </fieldset>
+
+        <fieldset>
+          <legend>Itens</legend>
+        
+          <textarea  id="refeição" name="itens" placeholder="Itens" class="ocultar"></textarea>
+          <br>
+        </fieldset>
+
+        <fieldset>
+          <legend>Bebida</legend>
+          <input type="bebida" id="bebida" name="bebida" placeholder="Bebida" class="ocultar"><br>
+          <br>
+        </fieldset>
+        <fieldset class="button-inserir">
+          <legend>Inserir img</legend>
+          <button id="inserir">Inserir img</button>
+          <br>
+        </fieldset>
+        <button id="cadastrar">Cadastrar</button>
+
+
+      </form>
+    </aside>
+
+  </main>
+
+
+
+  <footer>
+    <p>Desenvolvido por:Duda rubim</p>
+
+  </footer>
+</body>
+
+</html>
