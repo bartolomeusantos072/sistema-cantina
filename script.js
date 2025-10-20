@@ -7,6 +7,60 @@ const API_CARDAPIOS = "https://api-cantina-storage.vercel.app/cardapios";
 // -----------------------------
 // LOGIN E CADASTRO DE COZINHEIRAS
 // -----------------------------
+async function recuperarSenha(email) {
+  try {
+    const res = await fetch(API_COZINHEIRAS);
+    const cozinheiras = await res.json();
+
+    const user = cozinheiras.find(c => c.email === email);
+    const senhaDiv = document.querySelector("#senhaRecuperada");
+
+    if (user) {
+      sessionStorage.setItem("senhaRecuperada", user.senha);
+
+      senhaDiv.innerText = `Senha recuperada: ${user.senha}`;
+      senhaDiv.style.display = "block";
+
+      // Esconde após 30 segundos
+      setTimeout(() => {
+        sessionStorage.removeItem("senhaRecuperada");
+        senhaDiv.innerText = "";
+        senhaDiv.style.display = "none";
+      }, 30000);
+    } else {
+      alert("E-mail não encontrado.");
+    }
+  } catch (error) {
+    console.error("Erro ao recuperar senha:", error);
+    alert("Erro ao tentar recuperar a senha.");
+  }
+}
+
+document.querySelector("#enviar").addEventListener("click", () => {
+  const email = document.querySelector("#email").value.trim();
+  if (!email) {
+    alert("Digite um e-mail válido.");
+    return;
+  }
+  recuperarSenha(email);
+});
+
+// Mostrar senha se ainda estiver no sessionStorage (ex: ao recarregar a página)
+window.addEventListener("DOMContentLoaded", () => {
+  const senha = sessionStorage.getItem("senhaRecuperada");
+  const senhaDiv = document.querySelector("#senhaRecuperada");
+  if (senha) {
+    senhaDiv.innerText = `Senha recuperada: ${senha}`;
+    senhaDiv.style.display = "block";
+
+    // Esconde após 30 segundos mesmo se recarregarem a página
+    setTimeout(() => {
+      sessionStorage.removeItem("senhaRecuperada");
+      senhaDiv.innerText = "";
+      senhaDiv.style.display = "none";
+    }, 30000);
+  }
+});
 
 async function loginCozinheira(email, senha) {
   try {
@@ -224,3 +278,4 @@ document.querySelector("#cadastrar")?.addEventListener("click", async (e) => {
 window.addEventListener("DOMContentLoaded", () => {
   listarCardapios();
 });
+
