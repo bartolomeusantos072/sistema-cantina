@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperar Senha</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar Senha</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Recuperação de login</h2>
-<fieldset>
-        <legend>E-mail:</legend>
-        <input type="email" id="email" name="email" ><br>
-        <br>
-</fieldset>
-<h3>O código será enviado para o email</h3>
+  <h2>Recuperação de login</h2>
 
+  <fieldset>
+    <legend>E-mail:</legend>
+    <input type="email" id="email" name="email" required><br><br>
+  </fieldset>
 
-    <button id="enviar">Enviar</button>
+  <h3>O código será enviado para o email</h3>
 
+  <button id="enviar">Enviar</button>
+
+  <div id="senhaRecuperada" style="display: none; margin-top: 20px; font-weight: bold; color: red;"></div>
+
+  <script src="recuperar.js"></script> <!-- Coloque seu JS separado ou embutido -->
 </body>
 </html>
