@@ -74,7 +74,7 @@ cozinha-cardapio/
 
 ---
 
-### 👩‍💻 Autora
+### 👩‍💻 Autor
 
 **Professor Barto**
 📎 [github.com/bartolomeusantos072](https://github.com/bartolomeusantos072)
